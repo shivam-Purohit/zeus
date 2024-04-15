@@ -1382,7 +1382,9 @@ export default class Receive extends React.Component<
                                     )}
                                 />
                             )}
-                            {error_msg && <ErrorMessage top={10} message={error_msg} />}
+                            {error_msg && (
+                                <ErrorMessage top={10} message={error_msg} />
+                            )}
 
                             {showLspSettings && (
                                 <View style={{ margin: 10 }}>
@@ -1404,7 +1406,7 @@ export default class Receive extends React.Component<
                                             !!address &&
                                             !belowDustLimit && (
                                                 <WarningMessage
-                                                   top={10}
+                                                    top={10}
                                                     message={localeString(
                                                         'views.Receive.warningLndHub'
                                                     )}

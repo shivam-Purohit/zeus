@@ -9,7 +9,7 @@ interface MessageProps {
     mainStyle?: any;
     dismissable?: boolean;
     onPress?: () => void;
-    top:number;
+    top: number;
 }
 
 const Message = ({
@@ -20,14 +20,18 @@ const Message = ({
     dismissable,
     onPress,
     top
-
 }: MessageProps) => {
     const [isDismissed, setDismissed] = useState(false);
     if (isDismissed) return;
     return onPress ? (
         <TouchableOpacity style={[styles.field]} onPress={onPress}>
             <Text
-                style={[styles.field, mainStyle, { fontSize: fontSize || 20 }, {top: top || 10 } ]}
+                style={[
+                    styles.field,
+                    mainStyle,
+                    { fontSize: fontSize || 20 },
+                    { top: top || 10 }
+                ]}
             >
                 {message}
             </Text>
@@ -38,7 +42,12 @@ const Message = ({
             onPress={() => setDismissed(true)}
         >
             <Text
-                style={[styles.field, mainStyle, { fontSize: fontSize || 20 }, {top: top || 10 }]}
+                style={[
+                    styles.field,
+                    mainStyle,
+                    { fontSize: fontSize || 20 },
+                    { top: top || 10 }
+                ]}
             >
                 {message}
             </Text>
@@ -49,13 +58,25 @@ const Message = ({
             onPress={() => UrlUtils.goToUrl(link)}
         >
             <Text
-                style={[styles.field, mainStyle, { fontSize: fontSize || 20 }, {top: top || 10 }]}
+                style={[
+                    styles.field,
+                    mainStyle,
+                    { fontSize: fontSize || 20 },
+                    { top: top || 10 }
+                ]}
             >
                 {message}
             </Text>
         </TouchableOpacity>
     ) : (
-        <Text style={[styles.field, mainStyle, { fontSize: fontSize || 20 }, {top: top || 10 }]}>
+        <Text
+            style={[
+                styles.field,
+                mainStyle,
+                { fontSize: fontSize || 20 },
+                { top: top || 10 }
+            ]}
+        >
             {message}
         </Text>
     );
@@ -73,10 +94,10 @@ const SuccessMessage = ({
         message={message}
         fontSize={fontSize}
         link={link}
-        mainStyle={styles.successField} 
+        mainStyle={styles.successField}
         dismissable={dismissable}
         onPress={onPress}
-        top ={top}
+        top={top}
     />
 );
 
